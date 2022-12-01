@@ -8,7 +8,6 @@ def main():
             if line == "\n":
                 i += 1
                 dic[i] = 0
-                continue
             else:
                 dic[i] = dic[i] + int(line)
     sort_dic = sorted(dic.items(), key=lambda x: x[1], reverse=True)
