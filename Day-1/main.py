@@ -12,7 +12,9 @@ def main():
             else:
                 dic[i] = dic[i] + int(line)
     sort_dic = sorted(dic.items(), key=lambda x: x[1], reverse=True)
-    print(sort_dic[0][1]+sort_dic[1][1]+sort_dic[2][1])
+
+    print("PART 1 -> Answer=", sort_dic[0][1])
+    print("PART 2 -> Answer=", sort_dic[0][1] + sort_dic[1][1] + sort_dic[2][1])
 
 
 if __name__ == '__main__':
