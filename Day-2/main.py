@@ -1,95 +1,35 @@
 # ADVENT OF CODE 2022 - DAY-2
 def first_task(opponent, me):
-    count = 0
-    # -Your pick-
-    # Rock
-    if me == "X":
-        count += 1
-    # Paper
-    elif me == "Y":
-        count += 2
-    # Scissors
-    elif me == "Z":
-        count += 3
+    picks = {"X": 1, "Y": 2, "Z": 3}
+    count = picks.get(me)
 
-    # -Opponents pick-
-    # Rock
+    actions_A = {"X": 3, "Y": 6, "Z": 0}
+    actions_B = {"X": 0, "Y": 3, "Z": 6}
+    actions_C = {"X": 6, "Y": 0, "Z": 3}
+
     if opponent == "A":
-        # -Your pick-
-        # Rock
-        if me == "X":
-            count += 3
-        # Paper
-        elif me == "Y":
-            count += 6
-        # Scissors
-        elif me == "Z":
-            count += 0
-    # Paper
+        count += actions_A.get(me)
     elif opponent == "B":
-        # -Your pick-
-        # Rock
-        if me == "X":
-            count += 0
-        # Paper
-        elif me == "Y":
-            count += 3
-        # Scissors
-        elif me == "Z":
-            count += 6
-    # Scissors
+        count += actions_B.get(me)
     elif opponent == "C":
-        # -Your pick-
-        # Rock
-        if me == "X":
-            count += 6
-        # Paper
-        elif me == "Y":
-            count += 0
-        # Scissors
-        elif me == "Z":
-            count += 3
-
+        count += actions_C.get(me)
     return count
 
 
 def second_task(opponent, me):
-    count = 0
-    # -Opponents pick-
-    # Rock
-    if opponent == "A":
-        # Lose
-        if me == "X":
-            count += 0 + 3
-        # Draw
-        elif me == "Y":
-            count += 3 + 1
-        # Win
-        elif me == "Z":
-            count += 6 + 2
-    # Paper
-    elif opponent == "B":
-        # Lose
-        if me == "X":
-            count += 0 + 1
-        # Draw
-        elif me == "Y":
-            count += 3 + 2
-        # Win
-        elif me == "Z":
-            count += 6 + 3
-    # Scissors
-    elif opponent == "C":
-        # Lose
-        if me == "X":
-            count += 0 + 2
-        # Draw
-        elif me == "Y":
-            count += 3 + 3
-        # Win
-        elif me == "Z":
-            count += 6 + 1
+    picks = {"X": 0, "Y": 3, "Z": 6}
+    count = picks.get(me)
 
+    actions_A = {"X": 3, "Y": 1, "Z": 2}
+    actions_B = {"X": 1, "Y": 2, "Z": 3}
+    actions_C = {"X": 2, "Y": 3, "Z": 1}
+
+    if opponent == "A":
+        count += actions_A.get(me)
+    elif opponent == "B":
+        count += actions_B.get(me)
+    elif opponent == "C":
+        count += actions_C.get(me)
     return count
 
 
