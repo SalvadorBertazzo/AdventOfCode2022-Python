@@ -55,28 +55,38 @@ def first_task(opponent, me):
 
 def second_task(opponent, me):
     count = 0
+    # -Opponents pick-
     # Rock
     if opponent == "A":
+        # Lose
         if me == "X":
             count += 0 + 3
+        # Draw
         elif me == "Y":
             count += 3 + 1
+        # Win
         elif me == "Z":
             count += 6 + 2
     # Paper
     elif opponent == "B":
+        # Lose
         if me == "X":
             count += 0 + 1
+        # Draw
         elif me == "Y":
             count += 3 + 2
+        # Win
         elif me == "Z":
             count += 6 + 3
     # Scissors
     elif opponent == "C":
+        # Lose
         if me == "X":
             count += 0 + 2
+        # Draw
         elif me == "Y":
             count += 3 + 3
+        # Win
         elif me == "Z":
             count += 6 + 1
 
